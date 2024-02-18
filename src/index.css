@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-main {
+    @apply w-28 absolute transition-all duration-1000 opacity-70 -inset-px group-hover:bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg filter group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200;
+  }
+  .btn-main__wrapper {
+    @apply relative inline-flex mt-auto;
+  }
+  .btn-main__wrapper .target {
+    @apply relative inline-flex items-center justify-center px-5 py-2 text-base font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-600 rounded;
+  }
+  .title-track {
+    @apply text-4xl w-full sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight;
+    
+  }
+
+  .title-track[contenteditable]:focus {
+    @apply border-none outline-none;
+   }
+
+  
+  .track {
+    @apply rounded flex flex-col w-72 h-96 p-4 m-8 border-gray-300 border-2 gap-3;
+  }
+
+  .task {
+    @apply p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg;
+  }
+
+  .task-title {
+    @apply w-max text-lg font-bold text-gray-800;
+  }
+
+  .tracks {
+    @apply w-fit flex overflow-x-auto;
+  }
+
+  .board-actions {
+    @apply m-8;
+  }
+}
