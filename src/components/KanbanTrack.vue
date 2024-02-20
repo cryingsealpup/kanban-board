@@ -1,25 +1,30 @@
 <template>
-    <div class="track" v-for="track in store.tracks" :key="track.id">
+    <div class="track">
         <div class="title-track" contenteditable="true">
-            {{ track.title }}
+            {{ props.title }}
         </div>
-        <div class="track-items">
-            <KanbanTask />
-        </div>
-        <div class="btn-main__wrapper group">
-            <div class="btn-main"></div>
-            <button class="target" :click="store.addTask(track.id)">
-                Add task
-            </button>
-        </div>
-
-
+        <draggable class="track-items" v-model="props.tasks" group="tasks" item-key="id">
+            <template #item="{ element }">
+                <KanbanTask v-bind="element" />
+            </template>
+            
+        </draggable>
+        <AddTask :id="props.id" />
     </div>
+    
 </template>
 
-<script setup lang="ts">
+<script setup>
 import KanbanTask from './KanbanTask.vue';
-import { useKanbanStore } from '../stores/useKanbanStore';
+import AddTask from './AddTask.vue';
+import draggable from "vuedraggable";
+// import { useKanbanStore } from '../stores/useKanbanStore';
 
-const store = useKanbanStore();
+// const store = useKanbanStore();
+
+const props = defineProps({
+    id: Number,
+    title: String,
+    tasks: Array
+});
 </script>

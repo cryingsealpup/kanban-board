@@ -26,6 +26,11 @@
     @apply rounded flex flex-col w-72 h-96 p-4 m-8 border-gray-300 border-2 gap-3;
   }
 
+  .track-items {
+    @apply h-56 flex flex-col gap-3;
+    overflow-y: scroll;
+  }
+
   .task {
     @apply p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg;
   }
