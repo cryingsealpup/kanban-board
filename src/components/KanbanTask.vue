@@ -1,6 +1,6 @@
 <template>
     <div class="task">
-        <p class="task-title" autofocus="autofocus" contenteditable="true">
+        <p class="task-title" v-focus contenteditable="true">
             {{ props.title }}
         </p>
         {{ props.description }}
@@ -13,5 +13,7 @@ const props = defineProps({
     title: String,
     description: String
 });
-
+const vFocus = {
+  mounted: (el : HTMLElement) => el.focus()
+}
 </script>

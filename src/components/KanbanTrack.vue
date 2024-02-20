@@ -18,9 +18,6 @@
 import KanbanTask from './KanbanTask.vue';
 import AddTask from './AddTask.vue';
 import draggable from "vuedraggable";
-// import { useKanbanStore } from '../stores/useKanbanStore';
-
-// const store = useKanbanStore();
 
 const props = defineProps({
     id: Number,
