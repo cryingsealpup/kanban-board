@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 export const useKanbanStore = defineStore('main', {
     state: () => ({
-        tracks: [] as any
+        tracks: [] as Array<any>,
     }),
 
     actions: {
@@ -14,11 +14,14 @@ export const useKanbanStore = defineStore('main', {
         },
 
         addTask(id: number) {
+            
             this.tracks[id - 1].tasks.push({
-                id: this.tracks[id - 1].tasks.length + 1,
+                id: this.tracks[id - 1].tasks.length,
                 title: 'New Task',
                 description: ''
             });
+            
+            console.log(this.tracks[id - 1])
         },
 
         getTasks(id: number) {
