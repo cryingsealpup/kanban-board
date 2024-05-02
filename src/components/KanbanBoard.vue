@@ -8,7 +8,7 @@
         </div>
         <draggable group="tasks" v-model="track.tasks" item-key="id">
           <template #item="{ element: task }">
-            <KanbanTask :task="task" />
+            <KanbanTask @update:title="(e) => { console.log(e.target); task.title =  e.target?.textContent }" :title="task.title" />
           </template>
         </draggable>
         <AddTask :id="track.id" />

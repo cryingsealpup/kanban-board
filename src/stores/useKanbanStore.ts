@@ -23,7 +23,6 @@ export const useKanbanStore = defineStore('main', {
                 description: ''
             });
             
-            console.log(this.tracks[id - 1])
         },
 
         getTasks(id: number) {

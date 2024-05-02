@@ -1,7 +1,8 @@
 <template>
     <draggable group="tasks" class="track-items" :list="tracks[props.trackId - 1]?.tasks" item-key="id"  @start="drag=true" @end="drag=false">
         <template #item="{ element: task }">
-            <KanbanTask v-bind="task" @set-text="(txt)=> { console.log(txt); task.title=txt}" />
+            {{ task }}
+            <!-- <KanbanTask v-model="task.title" /> -->
         </template>
     </draggable>
     <AddTask :id="props.trackId" />

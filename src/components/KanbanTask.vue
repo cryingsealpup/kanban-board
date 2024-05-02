@@ -1,20 +1,14 @@
 <template>
     <div class="task">
-        <p class="task-title" v-focus contenteditable @input="$emit('setText', (<HTMLInputElement>$event.target).innerHTML)">
+        <p class="task-title" v-focus contenteditable @input="emit('update:title',  $event)">
             {{ props.title }}
         </p>
-        {{ props.description }}
     </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-    id: Number,
-    title: String,
-    description: String
-});
-
-defineEmits(['setText'])
+const props = defineProps(['title']);
+const emit = defineEmits(['update:title']);
 const vFocus = {
   mounted: (el : HTMLElement) => el.focus()
 }
